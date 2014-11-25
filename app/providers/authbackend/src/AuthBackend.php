@@ -214,7 +214,13 @@
 
             $allotments = \Allotment::find($params['id']);
 
-            $allotments->allotment_quata = $params['allotment_quata'];
+            if(isset($params['allotment_quata'])){
+                $allotments->allotment_quata = $params['allotment_quata'];
+            }else if(isset($params['price_one'])){
+                $allotments->price_one = $params['price_one'];
+            }else{
+                $allotments->price_double = $params['price_double'];
+            }
 
             if($allotments->save()){
                 return "true";

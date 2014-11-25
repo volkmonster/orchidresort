@@ -84,7 +84,8 @@
               </li>
               <li> <a title="" <?php if(Request::segment(2)=="allotmentroommanagement") echo 'class="active"'; else  echo ""; ?>><i class="icon-star"></i>{{Lang::get('admin.menu_allotment')}}</a>
               <ul>
-                  <li class=""> <a href="/backoffice/allotmentroommanagement">{{Lang::get('admin.menu_allotment_room')}}</a> </li>
+                  <li class=""> <a href="/backoffice/allotmentroommanagement">{{Lang::get('admin.menu_allotment_room')}}</a></li>
+                  <li class=""> <a href="/backoffice/allotmentpricesmanagement">{{Lang::get('admin.menu_allotment_price')}}</a></li>
                 </ul>
               </li>
               <li><a  <?php if(Request::segment(2)=="reportbookings") echo 'class="active"'; else  echo ""; ?> ><i class="icon-print"></i>{{Lang::get('admin.menu_report')}}</a>

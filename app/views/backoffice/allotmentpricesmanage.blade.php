@@ -84,8 +84,7 @@
 			</div>
 		</form>
 		<div class="form-actions form-wrapper right" id="save-actions">
-            <input type="button" id="save_button" value="Save" class="form-submit" />
-            <input type="button" id="cancel_button" value="Cancel" class="form-submit" />
+            <input type="button" id="save_button" value="Save" class="form-submit yellow_btn" />
           </div>
 		</div>
 
@@ -108,10 +107,10 @@ $('#search_button').click(function(){
 	   
 	    	if(response[i].allotment_dayname=="Saturday" || response[i].allotment_dayname=="Sunday"){
 	    		$('<tr style="background-color:#ccc;">').html(
-	        	"<td>" + response[i].allotment_date + "</td><td>" + response[i].allotment_dayname + "</td><td ><input maxlength='4' size='4' type='text' class='xxx' name='single_allot_"+response[i].id+"' id='single_allot_"+response[i].id+"' value='" + response[i].price_one + "' class='form-text' /></td><td><input maxlength='4' size='4' type='text' class='xxx' name='double_allot_"+response[i].id+"' id='double_allot_"+response[i].id+"' value='" + response[i].price_double + "' class='form-text' /></td>").appendTo('#myTable');
+	        	"<td>" + response[i].allotment_date + "</td><td>" + response[i].allotment_dayname + "</td><td ><input maxlength='4' size='4' type='text' class='xxx' name='single_allot_"+response[i].id+"' id='single_allot_"+response[i].id+"' value='" + response[i].price_one + "' class='form-text' /></td><td><input maxlength='4' size='4' type='text' class='yyy' name='double_allot_"+response[i].id+"' id='double_allot_"+response[i].id+"' value='" + response[i].price_double + "' class='form-text' /></td>").appendTo('#myTable');
 	    	}else{
 	    		$('<tr>').html(
-	        	"<td>" + response[i].allotment_date + "</td><td>" + response[i].allotment_dayname + "</td><td ><input maxlength='4' size='4' type='text' class='xxx' name='single_allot_"+response[i].id+"' id='single_allot_"+response[i].id+"' value='" + response[i].price_one + "' class='form-text' /></td><td><input maxlength='4' size='4' type='text' class='xxx' name='double_allot_"+response[i].id+"' id='double_allot_"+response[i].id+"' value='" + response[i].price_double + "' class='form-text' /></td>").appendTo('#myTable');
+	        	"<td>" + response[i].allotment_date + "</td><td>" + response[i].allotment_dayname + "</td><td ><input maxlength='4' size='4' type='text' class='xxx' name='single_allot_"+response[i].id+"' id='single_allot_"+response[i].id+"' value='" + response[i].price_one + "' class='form-text' /></td><td><input maxlength='4' size='4' type='text' class='yyy' name='double_allot_"+response[i].id+"' id='double_allot_"+response[i].id+"' value='" + response[i].price_double + "' class='form-text' /></td>").appendTo('#myTable');
 			}
 		});
 
@@ -126,11 +125,23 @@ $('#save_button').click(function(){
 
 		if(item.value!=item.defaultValue){
 				// Update allotment	
-				$.get("{{ URL::to('backoffice/updateallotment') }}?name="+item.name+"&newvalue="+item.value, function( response ) {
+				$.get("{{ URL::to('backoffice/updateallotmentprice') }}?name="+item.name+"&newvalue="+item.value+"&type=single", function( response ) {
 					console.log(response);
 				});
 		}
 	});
+
+  $.each($('.yyy'),function(i, item){
+    //console.log(item.value);
+    //console.log(item.defaultValue);
+
+    if(item.value!=item.defaultValue){
+        // Update allotment 
+        $.get("{{ URL::to('backoffice/updateallotmentprice') }}?name="+item.name+"&newvalue="+item.value+"&type=double", function( response ) {
+          console.log(response);
+        });
+    }
+  });
 	
 });
 

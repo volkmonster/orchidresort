@@ -50,7 +50,7 @@
                     <input name="include_breakfast" type="checkbox" value="1">
                   </div>
                   <div class="form-actions form-wrapper" id="edit-actions">
-                    <input type="button" id="addroom" value="Add Room Type" class="form-submit" />
+                    <input type="button" id="addroom" value="Add Room Type" class="form-submit yellow_btn" />
                   </div>
               </form>
         </div>

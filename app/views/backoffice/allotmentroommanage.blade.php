@@ -85,8 +85,7 @@
 			</div>
 		</form>
 		<div class="form-actions form-wrapper right" id="save-actions">
-            <input type="button" id="save_button" value="Save" class="form-submit" />
-            <input type="button" id="cancel_button" value="Cancel" class="form-submit" />
+            <input type="button" id="save_button" value="Save" class="form-submit yellow_btn" />
           </div>
 		</div>
 

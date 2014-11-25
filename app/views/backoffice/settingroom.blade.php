@@ -21,7 +21,6 @@
 	<tr><td colspan=6>
     <div class="form-actions form-wrapper right" id="edit-actions">
         <input type="button" id="save" value="Save" class="form-submit" />
-        <input type="button" id="save" value="Cancel" class="form-submit" />
     </div>
 	</td><tr>
 	</tbody>

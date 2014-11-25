@@ -222,6 +222,23 @@ class BackofficeController extends BaseController {
 		return AuthBackend::updateAllotment($data);
 	}
 
+	public function getUpdateallotmentprice(){
+		$data = Input::All();
+
+		// Must be validataion before this below
+		
+		if($data['type']=="single"){
+			$data['id'] = str_replace('single_allot_', '', $data['name']); 
+			$data['price_one'] = $data['newvalue'];
+		}else{
+			$data['id'] = str_replace('double_allot_', '', $data['name']);
+			$data['price_double'] = $data['newvalue'];
+		}
+		
+		return AuthBackend::updateAllotment($data);
+		
+	}
+
 	public function getSettingtax()
 	{	
 		return View::make('backoffice.reportbookings');

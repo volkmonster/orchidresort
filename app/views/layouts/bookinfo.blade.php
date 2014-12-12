@@ -92,6 +92,19 @@
                       </ul>
                      </div>
                   </div>
+                  
+                  <h4 class="lead">&nbsp;</h4>
+                  <div class="twelve columns boxes">
+                    <div>
+                      <h1 class="green-bold">{{$amount_rooms}} {{Lang::get('front.room')}}<?php if($amount_rooms>1 && (Session::get('locale')=="en")){ echo "s"; } ?> </strong> x {{$amount_nights}} {{Lang::get('front.night')}}<?php if($amount_nights>1 && (Session::get('locale')=="en")){ echo "s"; } ?></h1>
+                    </div>
+                    <div >
+                      <h3>
+                      <strong>Total price : </strong><span class="green-bold">{{number_format(($roomtypes['roomtype_price']*$amount_rooms*$amount_nights), 2, '.', ',');}}&nbsp;&nbsp;THB</span>
+                      </h3>
+                    </div>
+                  </div>
+                  
                   <h4 class="lead">{{Lang::get('front.booking_customerinfo')}}</h4>
                   <div class="twelve columns boxes">
               <form id="customer_form" role="form" action="{{ URL::to('/booking/bookinfo')}}" method="post" accept-charset="UTF-8">
@@ -108,6 +121,7 @@
                   </div>
                   <div>
                     <label>{{Lang::get('front.booking_mobile')}}</label>
+                    <span>E.g., 08x-xxx-xxxx , 09x-xxx-xxxx</span>
                     <input type="text" name="mobile" id="mobile" maxlength="10" class="form-text" value="{{@Input::old('mobile')}}" />
                     <span class="text-danger">{{ $errors->first('mobile'); }}</span>
                   </div>
@@ -149,19 +163,6 @@
               </form>
                   </div>
                 </div>
-        <div class="contact-items-book_r" id="block-system-main">
-                <h4 class="lead">&nbsp;</h4>
-                <div class="twelve columns boxes">
-                  <div>
-                    <h1 class="green-bold">{{$amount_rooms}} {{Lang::get('front.room')}}<?php if($amount_rooms>1 && (Session::get('locale')=="en")){ echo "s"; } ?> </strong> x {{$amount_nights}} {{Lang::get('front.night')}}<?php if($amount_nights>1 && (Session::get('locale')=="en")){ echo "s"; } ?></h1>
-                  </div>
-                  <div >
-                    <h3>
-                    <strong>Total price : </strong><span class="green-bold">{{number_format(($roomtypes['roomtype_price']*$amount_rooms*$amount_nights), 2, '.', ',');}}&nbsp;&nbsp;THB</span>
-                    </h3>
-                  </div>
-                </div>
-        </div>
       </div>
               <!-- /.region --> 
             </div>

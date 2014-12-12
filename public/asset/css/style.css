@@ -4484,7 +4484,7 @@ box-shadow: 0px 0px 15px 5px rgba(255, 255, 190, .75);
 }
 .contact-items-book {
 	float: left;
-	width: 60%;
+	width: 100%;
 	margin-right: 10px;
 	padding-top: 15px;
 }

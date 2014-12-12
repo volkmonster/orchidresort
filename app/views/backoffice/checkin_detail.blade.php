@@ -9,6 +9,7 @@
              <a class="yellow_btn" href="{{ URL::to('/backoffice/checkin')}}">Back</a>
              <h3><strong>Lead Guest    : {{$booking_detail['customer_firstname']."   ".$booking_detail['customer_lastname']}}</strong></h3>
              <h3><strong>Email Address : {{$booking_detail['customer_email']}}</strong></h3>
+             <h3><strong>Mobile No : {{$booking_detail['customer_mobile']}}</strong></h3>
              <h3><strong>Total Charge  : </strong><span class="green-bold">THB {{number_format(($booking_detail['booking_price']), 2, '.', ',')}}</span></h3>
              <hr/>
              <div style="display:none;" id="infobox" role="alert" class="alert alert-success">

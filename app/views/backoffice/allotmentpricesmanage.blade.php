@@ -100,9 +100,10 @@
 
 
 $('#search_button').click(function(){
-
+  
+  $('#myTableBody').html('');
 	$.get("{{ URL::to('backoffice/dataallotmentprices') }}?id="+$('#roomtrpename').val()+"&from="+$('#rooms-start-date').val()+"&to="+$('#rooms-end-date').val(), function( response ) {
-		$('#myTableBody').html('');
+		
     $.each(response, function(i, item) {
 	   
 	    	if(response[i].allotment_dayname=="Saturday" || response[i].allotment_dayname=="Sunday"){
@@ -143,6 +144,9 @@ $('#save_button').click(function(){
     }
   });
 	
+  alert('Price Updated');
+  $('#search_button').click();
+
 });
 
 

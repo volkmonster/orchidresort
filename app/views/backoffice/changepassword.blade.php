@@ -24,7 +24,7 @@
                   <div class="two columns right">
                     
                       <label for="edit-group-size-adults1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-                      <input type="submit" id="save_button" value="{{Lang::get('admin.save')}}" class="form-submit" />
+                      <input type="submit" id="save_button" value="{{Lang::get('admin.save')}}" class="form-submit yellow_btn" />
                     
                   </div>
                 </div>

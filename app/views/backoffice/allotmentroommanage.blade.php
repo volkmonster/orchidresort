@@ -101,9 +101,8 @@
 
 
 $('#search_button').click(function(){
-
+  $('#myTableBody').html('');
 	$.get("{{ URL::to('backoffice/dataallotment') }}?id="+$('#roomtrpename').val()+"&from="+$('#rooms-start-date').val()+"&to="+$('#rooms-end-date').val(), function( response ) {
-		$('#myTableBody').html('');
     $.each(response, function(i, item) {
 	   
 	    	if(response[i].allotment_dayname=="Saturday" || response[i].allotment_dayname=="Sunday"){
@@ -127,10 +126,12 @@ $('#save_button').click(function(){
 		if(item.value!=item.defaultValue){
 				// Update allotment	
 				$.get("{{ URL::to('backoffice/updateallotment') }}?name="+item.name+"&newvalue="+item.value, function( response ) {
-					console.log(response);
+        console.log(response);
 				});
 		}
 	});
+  alert('Allotment Updated');
+  $('#search_button').click();
 	
 });
 

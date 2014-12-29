@@ -31,7 +31,8 @@ $arrayparam = array(
 	'checkout'=>$_GET['checkout'],
 	'amount_rooms'=>$_GET['amount_rooms'],
 	'breakfast'=>$_GET['breakfast'],
-	'roomtype'=>$_GET['roomtype']
+	'roomtype'=>$_GET['roomtype'],
+	'amount_guest'=>$_GET['amount_guest']
 	);
 
 $query = http_build_query($arrayparam);

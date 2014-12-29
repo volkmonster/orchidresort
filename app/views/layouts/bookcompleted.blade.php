@@ -30,7 +30,7 @@
                       <li><i class="icon-record"></i>{{Lang::get('front.booking_amountnight')}} : {{@Session::get('amount_nights')}}</li>
                       <li><i class="icon-record"></i>{{Lang::get('front.booking_amountrooms')}} : {{@Session::get('amount_rooms')}}</li>
                       <li><i class="icon-record"></i>{{Lang::get('front.booking_breakfast')}} :  <?php if($roomtypes['include_breakfast']==true){ echo "Included"; }else{ echo "Excluded"; }?></li>
-                      <li><i class="icon-record"></i>{{Lang::get('front.booking_maxoccupancy')}} :  {{$roomtypes['roomtype_maxperson']}}</li>
+                      <li><i class="icon-record"></i>{{Lang::get('front.booking_maxoccupancy')}} :  {{$booking_detail['amount_guest']}}</li>
                       <li><i class="icon-record"></i>{{Lang::get('front.booking_roomtype')}} :  {{$roomtypes['roomtype_name']}}</li>
                       </ul>
                       <a href="javascript:void();" class="yellow_btn" onclick="window.print(); return false;">{{Lang::get('front.print')}}</a> 

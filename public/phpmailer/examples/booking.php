@@ -165,6 +165,7 @@
 											                      <li><i class="icon-record"></i>No. of Rooms : <?php echo $_GET['amount_rooms']; ?></li>
 											                      <li><i class="icon-record"></i>Breakfast:  <?php echo $_GET['breakfast']; ?></li>
 											                      <li><i class="icon-record"></i>Room Type:  <?php echo $_GET['roomtype']; ?></li>
+                                            <li><i class="icon-record"></i>Max Occupancy:  <?php echo $_GET['amount_guest']; ?></li>
 											                      </ul>	
                                                             </p>
                                                        </td>

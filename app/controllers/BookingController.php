@@ -29,6 +29,8 @@ class BookingController extends BaseController {
 		$rules 		= array('checkin'=>'required','checkout'=>'required');
 
 		$amount_guest = @$data['amount_guest'];
+
+		Session::put('amount_guest',$amount_guest);
 		
 		$validator = Validator::make($data, $rules);
 		if ($validator->fails())
@@ -182,6 +184,8 @@ class BookingController extends BaseController {
 
 						if(!empty($booking_res['id'])){
 							
+							$booking_res['amount_guest'] = Session::get('amount_guest');
+
 							Session::put('booking_detail',$booking_res);
 
 							$breakfast = "Excluded";
@@ -197,6 +201,7 @@ class BookingController extends BaseController {
 									'amount_rooms'=>$amount_rooms,
 									'breakfast'=>$breakfast,
 									'roomtype'=>$roomtypes['roomtype_name'],
+									'amount_guest'=>$booking_res['amount_guest'],
 									'customer_email'=>$data['email']
 											);
 
@@ -228,7 +233,7 @@ class BookingController extends BaseController {
 
 		$booking_detail = Session::get('booking_detail');
 
-		$roomtype_id = $booking_detail['roomtype_id'];
+		$roomtype_id 	= $booking_detail['roomtype_id'];
 
 		$roomtype 		= AuthBackend::getRoomtype($roomtype_id);
 		$json_roomtype 	= json_encode($roomtype);
